@@ -1,4 +1,4 @@
-# prajakt_Quiz-L1-1
+# HTML_Quiz-L1-1
 This is demo of quiz game 
 
 This is demo quiz on HTML
