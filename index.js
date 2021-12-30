@@ -5,6 +5,11 @@ var readline = require('readline-sync');
 var user = readline.question("What is Your name? ");
 console.log("\n Welcome " + user + "\n");
 console.log("Welcome to * HTML Quiz * \n");
+console.log("------------------------ \n");
+console.log("Starting Quiz * \n\n");
+
+console.log("------------------------ \n");
+
 
 
 var score = 0;
