@@ -23,7 +23,7 @@ function quiz(question, answer) {
     console.log(chalk.red.underline("Wrong!"));
   }
   console.log("--------------------------------");
-  console.log(chalk.skyblue("Your score is " + chalk.bgyellow(score) + "\n"));
+  console.log(chalk.yellow("Your score is " + score + "\n"));
 }
 
 var levelOne = [
