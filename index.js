@@ -1,12 +1,12 @@
-
+const chalk=require("chalk");
 var readline = require('readline-sync');
 
 
-var user = readline.question("What is Your name? ");
-console.log("\n Welcome " + user + "\n");
-console.log("Welcome to * HTML Quiz * \n");
+var user = readline.question(chalk.red("What is Your name? "));
+console.log(chalk.yellow("\n Welcome " + user + "\n"));
+console.log(chalk.blue.underline.bold("Welcome to * HTML Quiz * \n"));
 console.log("------------------------ \n");
-console.log("Starting Quiz * \n\n");
+console.log(chalk.blue.underline.bold("Starting Quiz * \n\n"));
 
 console.log("------------------------ \n");
 
@@ -17,13 +17,13 @@ var score = 0;
 function quiz(question, answer) {
   var useranswer = readline.question(question);
   if (useranswer.toUpperCase() === answer.toUpperCase()) {
-    console.log("Right!");
+    console.log(chalk.green.underline("Right!"));
     score++;
   } else {
-    console.log("Wrong!");
+    console.log(chalk.red.underline("Wrong!"));
   }
   console.log("--------------------------------");
-  console.log("Your score is " + score + "\n");
+  console.log(chalk.skyblue("Your score is " + chalk.bgyellow(score) + "\n"));
 }
 
 var levelOne = [
@@ -79,30 +79,30 @@ for (var i = 0; i < levelOne.length; i++) {
 if (score === levelOne.length) {
 
   console.log("--------------------------------");
-  console.log("Yeah it's high score \n");
-  console.log("Congrats " + user + " Level One is clear!\n");
+  console.log(chalk.yellow.underline("Yeah it's high score \n"));
+  console.log(chalk.yellow.underline.bold("Congrats " + user + " Level One is clear!\n"));
   console.log("--------------------------------\n\n");
-  console.log("Welcome to Level Two\n");
+  console.log(chalk.yellow.underline("Welcome to Level Two\n"));
   console.log("**************************");
   for (var i = 0; i < levelTwo.length; i++) {
     var q = levelTwo[i];
     quiz(q.que, q.ans);
   }
 } else {
-  console.log("Your total Score is:" + score + "/" + levelOne.length + "\n");
-  console.log("Thank You For playing");
+  console.log(chalk.yellow.underline("Your total Score is:" + score + "/" + levelOne.length + "\n"));
+  console.log(chalk.yellow.underline("Thank You For playing"));
 }
 
 var total = levelOne.length + levelTwo.length;
 if (score === total) {
 
   console.log("--------------------------------");
-  console.log("Congrats " + user + " Level Two is clear!\n");
-  console.log("Your total Score is:" + score + "/" + total + "\n");
-  console.log("Yeah it's high score \n Please Take a Screenshot!!!!");
+  console.log(chalk.yellow.underline.bold("Congrats " + user + " Level Two is clear!\n"));
+  console.log(chalk.yellow.underline.bold("Your total Score is:" + score + "/" + total + "\n"));
+  console.log(chalk.yellow.underline("Yeah it's high score \n Please Take a Screenshot!!!!"));
   console.log("--------------------------------\n\n");
 } else {
   console.log("--------------------------------\n\n");
-  console.log("Your total Score is:" + score + "/" + total + "\n");
-  console.log("Thank You For playing");
+  console.log(chalk.yellow.underline("Your total Score is:" + score + "/" + total + "\n"));
+  console.log(chalk.yellow.underline.bold("Thank You For playing"));
 }
